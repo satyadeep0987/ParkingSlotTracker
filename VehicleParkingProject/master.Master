@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="VehicleParkingProject.master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+            border-style: solid;
+            border-width: 2px;
+            background-color: #C0C0C0;
+        }
+        #heading{
+            text-align:center;
+            position: fixed,relative;          
+            top: 10px;
+            font-size:x-large;
+            font-weight: bold;
+        }
+        #footer{
+            text-align:center;
+            position: fixed;          
+            bottom: 10px;
+            font-weight: bold;
+        }
+        .button {
+              /*background-color: #4CAF50; /* Green */
+              border: none;
+              color: black;
+              padding: 15px 32px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              cursor: pointer;
+              position: relative;
+            }
+        .button5 
+        {background-color: #555555;}
+        .btn{
+            text-align:center;
+            }
+        </style>
+        
+       
+       <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <header class="auto-style1" id="heading">
+        <p>SDS PARKING</p>
+        </header>
+
+         <div class="btn">
+             <asp:Button ID="btnHome" runat="server" class="button button5" Text="Home" PostBackUrl="~/home.aspx" />
+             
+            <asp:Button ID="btnTwoWheeler" runat="server" class="button button5" Text="Two Wheeler" PostBackUrl="~/TwoWheeler.aspx" />
+            <asp:Button ID="tnFourWheeler" runat="server" class="button button5" Text="Four Wheeler" PostBackUrl="~/FourWheeler.aspx" /> 
+             <asp:Button ID="btnContact" runat="server" class="button button5" Text="About" PostBackUrl="~/About.aspx" />          
+        </div>
+
+           
+        
+        <div>
+           <asp:ContentPlaceHolder ID="body" runat="server">
+            </asp:ContentPlaceHolder>
+            
+        </div>
+
+        <footer class="auto-style1" id="footer">
+            <p>&copy;SDS PARKING</p>
+        </footer>
+        
+       
+    </form>
+</body>
+</html>

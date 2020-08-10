@@ -1,0 +1,16 @@
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.config
+.vs
+*.sln
+
+
+bin/
+obj/
+packages/
+Properties/

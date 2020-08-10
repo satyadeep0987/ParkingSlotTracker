@@ -1,7 +1,10 @@
+--Creating data base
+
 create database ParkingProject
 
 use ParkingProject
 
+--creating vehical tabble
 create table vehicle_reg
 (
 	vid int primary key identity,
@@ -14,25 +17,32 @@ create table vehicle_reg
 	charge bigint,
 )
 
-insert into vehicle_reg values('','',null,'','',0,0)
+--insert into vehicle_reg values('','',null,'','',0,0)
 
-drop table vehicle_reg
+--drop table vehicle_reg
 
+
+--add 2 wheeler avalable slot
 create table avalslotlight
 ( slot varchar(10) not null unique )
 
-drop table avalslotlight
-drop table engslotlight
+--drop table avalslotlight
+--drop table engslotlight
 
+--2 wheeler engaged slot
 create table engslotlight
 ( slot varchar(10) not null unique )
 
+--4 wheeler engaed slot
 create table engslotheavy
 ( slot varchar(10) not null unique )
 
+--4 wheeler engaged slot
 create table avalslotheavy
 ( slot varchar(10) not null unique )
 
+
+--Predefined available slot for 2 wheeler
 insert Into avalslotlight values('F1-1')
 insert Into avalslotlight values('F1-2')
 insert Into avalslotlight values('F1-3')
@@ -59,7 +69,7 @@ insert Into avalslotlight values('F1-23')
 insert Into avalslotlight values('F1-24')
 insert Into avalslotlight values('F1-25')
 
-
+--Predefined 4 wheeler slot 
 insert Into avalslotheavy values('F2-1')
 insert Into avalslotheavy values('F2-2')
 insert Into avalslotheavy values('F2-3')
@@ -81,11 +91,12 @@ insert Into avalslotheavy values('F3-8')
 insert Into avalslotheavy values('F3-9')
 insert Into avalslotheavy values('F3-10')
 
+--Check the above data is inserted or not
 select count(*) cs from avalslotheavy
 
 select count(*) from avalslotlight
 
-
+--stored procedure for getting availability of the slot
 CREATE PROC COUNTSLOT(@p int out)
 as
 BEGIN
@@ -108,5 +119,5 @@ exec COUNTSLOTlIGHT @c out
 
 select @c
 
-drop proc COUNTSLOT
+--drop proc COUNTSLOT
 
